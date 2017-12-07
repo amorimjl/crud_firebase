@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar color="twich">
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>     
+    <ion-title>PLAYERUNKNOWN'S BATTLEGROUNDS</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="background">
+
+<form (ngSubmit)="valorForm()">
+    <!-- <ion-icon item-left name="search"></ion-icon> -->
+    <ion-input type="text" [(ngModel)]="item.name" name="item" placeholder="Digite o nome do streamer"></ion-input>
+</form>    
+
+<ion-list>
+  <ion-item-sliding *ngFor="let contact of contacts | async">
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="assets/imgs/{{ contact.imagem }}"  alt="">
+      </ion-avatar>
+      <h1>{{ contact.name }}</h1>
+      <p>{{ contact.game }}</p>
+    </ion-item>
+    <ion-item-options side="right">
+      <button ion-button color="secondary" (click)="editContact(contact)">
+        <ion-icon name="create"></ion-icon>
+      </button>
+      <button ion-button color="danger" (click)="removeContact(contact.key)">
+        <ion-icon name="trash"></ion-icon>
+      </button>
+    </ion-item-options>
+  </ion-item-sliding>
+</ion-list>
+
+</ion-content>

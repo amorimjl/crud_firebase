@@ -1,0 +1,39 @@
+<ion-header>
+    <ion-navbar color="twich">
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>     
+      <ion-title>Home</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-content class="card-background-page">
+      
+        <ion-card>
+          <img src="assets/imgs/league-of-legends.jpg" (click)="goLol()"/>
+          <div class="card-title">League of Legends</div>
+        </ion-card>
+
+        <ion-card>
+            <img src="assets/imgs/csgo.jpg" (click)="goCS()"/>
+            <div class="card-title">CS:GO</div>
+        </ion-card>
+
+          <ion-card>
+              <img src="assets/imgs/fifa18.jpg" (click)="goFifa()"/>
+              <div class="card-title">Fifa</div>
+          </ion-card>
+
+          <ion-card>
+            <img src="assets/imgs/pubg.jpg" (click)="goPubg()"/>
+            <div class="card-title">Pubg</div>
+          </ion-card>
+
+            <ion-card>
+                <img src="assets/imgs/dota2.jpg" (click)="goDota()"/>
+                <div class="card-title">Dota 2</div>
+            </ion-card>
+
+            
+      
+      </ion-content>

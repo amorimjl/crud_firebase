@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-navbar color="twich">
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>     
+      <ion-title>Novo Contato</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+<ion-content padding>
+
+  <form [formGroup]="form">
+    <ion-item>
+      <ion-label stacked>Streamer</ion-label>
+      <ion-input type="text" formControlName="name"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.name.valid && (form.controls.name.dirty || form.controls.name.touched)" color="danger">
+        <div [hidden]="!form.controls.name.errors.required">
+          O campo é obrigatório
+        </div>
+    </ion-item>
+    <ion-item text-uppercase>
+      <ion-label stacked>Game</ion-label>
+      <ion-input type="text" formControlName="game"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.game.valid && (form.controls.game.dirty || form.controls.game.touched)" color="danger">
+      <div [hidden]="!form.controls.game.errors.required">
+        O campo é obrigatório
+      </div>
+    </ion-item>
+    
+       
+    <div padding>
+      <button ion-button block type="submit" [disabled]="!form.valid" (click)="onSubmit()">Salvar</button>
+    </div>
+  </form>
+
+</ion-content>
